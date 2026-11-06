@@ -1,0 +1,7 @@
+/* Current work stays visible beside the bio and below the portrait. */
+.about-sidebar{min-width:0}
+.current-project{margin-top:18px;padding:22px 24px;border:1px solid #9f8cac;border-radius:18px;background:#e9eddb}
+.current-project .eyebrow{font-size:.7rem;letter-spacing:.12em;margin-bottom:9px}
+.current-project h2{font-family:Georgia,"Times New Roman",serif;font-size:1.65rem;line-height:1.2;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;color:#2f2938}
+.current-project p:last-child{font-size:.96rem;line-height:1.65;color:#51435e;margin:0}
+@media(max-width:680px){.about-sidebar{width:100%;max-width:420px;margin:0 auto}.current-project{padding:21px;margin-top:16px}.current-project h2{font-size:1.55rem}}
