@@ -22,6 +22,10 @@ document.querySelectorAll('.photo-carousel').forEach((carousel) => {
   carousel.classList.add('carousel-ready');
 
   let index = 0;
+  let pointer = null;
+  let suppressClick = false;
+  carousel.tabIndex = 0;
+  track.style.touchAction = 'pan-y';
 
   function showSlide(next) {
     index = (next + slides.length) % slides.length;
@@ -40,11 +44,21 @@ document.querySelectorAll('.photo-carousel').forEach((carousel) => {
   controls.querySelectorAll('button').forEach((button) => {
     button.addEventListener('click', () => showSlide(index + Number(button.dataset.step)));
   });
-  controls.addEventListener('keydown', (event) => {
+  carousel.addEventListener('keydown', (event) => {
     const step = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
     if (!step || event.altKey || event.ctrlKey || event.metaKey) return;
     event.preventDefault();
     showSlide(index + step);
   });
+  track.addEventListener('pointerdown',event=>{
+    if(event.pointerType==='touch'||event.pointerType==='pen')pointer={x:event.clientX,y:event.clientY};
+  });
+  track.addEventListener('pointerup',event=>{
+    if(!pointer)return;
+    const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){suppressClick=true;showSlide(index+(dx<0?1:-1));}
+  });
+  track.addEventListener('click',event=>{if(suppressClick){suppressClick=false;event.preventDefault();event.stopImmediatePropagation();}},true);
+  track.addEventListener('pointercancel',()=>pointer=null);
   showSlide(0);
 });
