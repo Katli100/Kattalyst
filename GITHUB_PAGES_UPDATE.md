@@ -1,21 +1,15 @@
-# Update the public portfolio
+# Apply the image and stylesheet repair
 
-The revised Sites preview remains private. These ZIP files are for your separate GitHub Pages website.
+This repair matches the layout of the uploaded Kattalyst repository. Project pages are next to index.html, and all images stay in assets/.
 
-1. Unzip both packages.
-2. Upload the extracted contents of the product-projects package into the root of the existing portfolio repository. Preserve its `product` folder.
-3. Upload the extracted contents of the main-site package into the same repository root. `index.html`, `graphics.html`, `assets`, and `product` should be siblings. Do not add an extra folder around the entire website.
-4. Remove these retired files from the existing repository if they are still present:
+1. Unzip Kattalyst-image-fix.zip.
+2. Copy all 22 extracted files into the existing repository folder containing index.html. Replace files with the same names.
+3. Keep the existing assets folder and its contents in place. This patch does not require an image upload.
+4. Commit and push the changes, or upload the 22 files through GitHub's Upload files screen in the repository root and commit them.
+5. After GitHub Pages finishes deploying, hard-refresh the website and check Home, Product, Graphics, and a project page.
 
-   - `assets/Katherine_Li_Resume.pdf`
-   - `product/assets/Katherine_Li_Design_Fabrication_Resume.pdf`
-   - `assets/Katherine_Li_Graphic_Presentation_Portfolio.pdf`
+The pages now use site.css for shared/main styling and product.css for product styling. Their different names prevent the former style.css collision. The old style.css can remain; no repaired page links to it.
 
-   Uploading new files does not delete old files from GitHub. The new website contains no resume link, but removing the old PDFs also removes those direct public downloads from the current published files. Git history is unaffected.
+All media references are relative to the repository's current layout. The restored pocket-whiteboard section, P&G cover thumbnail, image galleries, and interaction scripts are retained.
 
-5. Wait for the existing GitHub Pages deployment to finish, then check Home, Product, Graphic Design, P&G, AOE, About, Contact, and one nested product page. Hard-refresh an already-open browser tab if it still shows the old files.
-6. Use the actual public Graphics page address in the CorVel application. Do not use the owner-private Sites preview as though it were a public portfolio link.
-
-Each package contains fewer than 100 files. The complete P&G class PDF is an optional case-study download; it is not a resume. The tailored application resume is delivered separately and is not included in either website package.
-
-The homepage gives Product and Graphic Design equal choices. The shared navigation is Home, About, and Contact; each work collection lives on its own page. Email and LinkedIn are on Contact. HEARTSTEEL artwork is retained as supplied.
+For future updates, use this repaired layout as the starting point. Old packages that expect a product/ subfolder should not be uploaded over these pages.
