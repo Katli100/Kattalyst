@@ -10,9 +10,9 @@ const [left, right] = ends;
 const steps = [...document.querySelectorAll("[data-end]")];
 const cable = document.querySelector('#cables');
 const notes = {
-  independent: 'Each side adjusts independently. Pull one end and watch the other stay put.',
-  linked: 'Changing either end moves both ends together.',
-  fixed: 'The computer end is fixed at 0 cm. Only the device end adjusts.'
+  independent: 'Pull either end. The other end stays where it is.',
+  linked: 'Pull either end and both lengths change together.',
+  fixed: 'The computer end stays at 0 cm. Only the device end changes.'
 };
 let mode = 'independent';
 let drag;
@@ -82,7 +82,7 @@ for (const button of modes) {
     for (const option of modes) option.setAttribute('aria-pressed', String(option === button));
     left.plug.setAttribute('aria-disabled', String(mode === 'fixed'));
     left.length = right.length = 0;
-    document.querySelector('#modeNote').textContent = notes[mode] + ' Cable lengths reset when you switch layouts.';
+    document.querySelector('#modeNote').textContent = notes[mode] + ' Changing the layout resets both lengths.';
     draw();
   });
 }

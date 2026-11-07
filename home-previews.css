@@ -1,0 +1,20 @@
+/* The preview cards are the Home page entrances to the two collections. */
+.balanced-intro{grid-template-columns:1.12fr 1fr;gap:50px;padding:40px 0 50px}
+.balanced-intro .hero-line{font-size:clamp(1.65rem,2.7vw,2.3rem);line-height:1.3;max-width:24ch}
+.balanced-intro .location{margin-top:26px}
+.balanced-art{display:block;min-height:0;max-width:510px;padding:14px 10px}
+.balanced-art:before{background:#e9ddf726}
+.preview-links{position:relative;display:grid;gap:28px;z-index:1}
+a.discipline-preview{display:block;min-width:0;color:#352b40;text-decoration:none;transition:border-color .18s,box-shadow .18s}
+.discipline-preview figure{margin:0}
+.discipline-preview figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 8px;font-size:.86rem}
+.discipline-preview figcaption svg{width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.preview-media{position:relative;display:grid;place-items:center;height:166px;overflow:hidden;border-radius:8px}
+.discipline-preview .preview-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;opacity:0;transition:opacity 1.4s ease;pointer-events:none}
+.discipline-preview .preview-media img.is-active{opacity:1}
+.discipline-preview .preview-project{margin:9px 0 0;padding:0;font-size:.78rem;line-height:1.5;min-height:2.9em;display:flex;align-items:center;color:#51435e}
+a.discipline-preview:focus-visible{outline:3px solid #65438a;outline-offset:5px;border-color:#65438a}
+@media(hover:hover){a.discipline-preview:hover{border-color:#73577f;box-shadow:0 12px 28px #4933591a}}
+@media(max-width:900px){.balanced-intro{gap:28px}.preview-media{height:158px}}
+@media(max-width:680px){.balanced-intro{grid-template-columns:1fr;gap:21px;padding:26px 0 40px}.balanced-intro .hero-line{font-size:clamp(1.65rem,6.8vw,2.1rem)}.balanced-art{max-width:440px;padding:9px 4px}.balanced-art:before{inset:0;transform:none}.preview-links{gap:20px}.preview-media{height:auto;aspect-ratio:16/9}.discipline-preview .preview-project{min-height:0}}
+@media(prefers-reduced-motion:reduce){a.discipline-preview,.discipline-preview .preview-media img{transition:none;transform:none!important}}

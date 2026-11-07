@@ -8,12 +8,17 @@
     if(!viewer || typeof viewer.showModal!=='function'){window.open(src,'_blank','noopener');return;}
     lastTrigger=trigger;
     viewerImg.src=src;viewerImg.alt=alt;
-    document.getElementById('viewer-title').textContent=caption || alt;
-    viewerCaption.textContent=caption || '';
+    viewerCaption.textContent=caption || alt || '';
     viewer.showModal();
     viewer.querySelector('[data-close-viewer]').focus();
   }
   document.querySelectorAll('[data-zoom]').forEach(button=>button.addEventListener('click',()=>openArtwork(button.dataset.zoom,button.dataset.alt || button.querySelector('img')?.alt || '',button.dataset.caption,button)));
+  document.querySelectorAll('[data-open-current]').forEach(button=>{
+    if(button.querySelector('.zoom-cue'))return;
+    const cue=document.createElement('span');cue.className='zoom-cue';cue.setAttribute('aria-hidden','true');
+    cue.innerHTML='<svg class="zoom-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.5v6m-3-3h6"/></svg>';
+    button.append(cue);
+  });
   if(viewer){
     viewer.querySelector('[data-close-viewer]').addEventListener('click',()=>viewer.close());
     viewer.addEventListener('click',event=>{if(event.target===viewer){const r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});

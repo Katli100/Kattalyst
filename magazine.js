@@ -44,7 +44,14 @@
     button.dataset.zoom = pages[page].src;
     button.dataset.alt = pages[page].alt;
     button.dataset.caption = pages[page].label;
-    button.textContent = page === 0 ? 'Enlarge cover ↗' : `Enlarge ${compact ? 'page' : side + ' page'} ↗`;
+    const label = document.createElement('span');
+    label.textContent = page === 0 ? 'Enlarge cover' : `Enlarge ${compact ? 'page' : side + ' page'}`;
+    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    icon.setAttribute('class', 'zoom-icon');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML = '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.5v6m-3-3h6"/>';
+    button.replaceChildren(label, icon);
     button.setAttribute('aria-label', `Enlarge ${pages[page].label}`);
   }
   function render() {

@@ -100,3 +100,36 @@
 
 /* Collection cards are peer sections below the page heading. */
 .project-copy h2.project-title{font-size:1.5rem;line-height:1.25;letter-spacing:-.035em;font-weight:700;margin:9px 0 12px}
+
+/* Shared image controls and the longer navigation labels. */
+.zoom-icon{display:block;width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.zoom-cue{display:grid;place-items:center;padding:0}
+.carousel-art{position:relative}
+.magazine-zoom button{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.magazine-zoom button[hidden]{display:none}
+#artwork-viewer .viewer-toolbar{justify-content:flex-end;padding:0 0 12px;gap:0}
+#artwork-viewer [data-close-viewer]{box-sizing:border-box;display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;margin:0;line-height:0;border:1px solid #8f7c9d;border-radius:50%;background:#e9e0f2;color:#46364f;cursor:pointer}
+#artwork-viewer [data-close-viewer] svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+#artwork-viewer [data-close-viewer]:focus-visible{outline:3px solid #65438a;outline-offset:3px}
+#artwork-viewer #viewer-caption{max-width:none;margin:15px 0 0;font-size:.9rem;line-height:1.6}
+#artwork-viewer #viewer-caption:empty{display:none}
+.friendly-contact{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:center;max-width:none;padding:65px 0 95px;min-height:calc(100svh - 240px)}
+.friendly-contact .contact-copy{max-width:59ch}
+.friendly-contact h1{font-size:clamp(3.15rem,5.6vw,5.15rem);margin-bottom:25px}
+.friendly-contact .lede{font-size:1.25rem;margin-bottom:15px;color:#51435e}
+.friendly-contact .contact-copy>p:not(.eyebrow):not(.location):not(.contact-address){line-height:1.75}
+.contact-postcard{position:relative;padding:30px 34px 36px;border:1px solid #a18aae;border-radius:26px;background:linear-gradient(140deg,#ece4f4,#f7e9e2);transform:rotate(2deg);box-shadow:0 10px 30px #4933590b}
+.contact-envelope{display:block;width:150px;height:auto;margin:0 auto 18px}
+.envelope-blob{fill:#dce6ca}
+.envelope-lines{fill:#fffdf9;stroke:#665373;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.envelope-lines path{fill:none}
+.envelope-spark{fill:none;stroke:#92759f;stroke-width:2.5;stroke-linecap:round}
+.contact-postcard .eyebrow{font-size:.69rem;margin-bottom:12px}
+.contact-postcard h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.65rem,2.4vw,2.15rem);line-height:1.2;letter-spacing:-.025em;font-weight:400;margin:0 0 18px}
+.contact-postcard p:last-child{font-size:.98rem;line-height:1.75;margin:0;color:#51435e}
+.contact-icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(hover:hover){#artwork-viewer [data-close-viewer]:hover{background:#ded0eb}}
+@media(max-width:900px){.friendly-contact{gap:35px}.contact-postcard{padding:26px}}
+@media(max-width:680px){.site-header nav[aria-label="Main navigation"] a.pill{padding:8px 6px;font-size:.83rem;white-space:nowrap}.friendly-contact{grid-template-columns:1fr;gap:36px;padding:35px 0 55px;min-height:0}.friendly-contact h1{font-size:clamp(3.1rem,12vw,4rem)}.friendly-contact .lede{font-size:1.12rem}.contact-postcard{max-width:430px;width:100%;margin:0 auto;transform:none;padding:25px}.contact-envelope{width:125px;margin-bottom:13px}}
+@media(max-width:360px){.site-header nav[aria-label="Main navigation"] a.pill{padding:8px 3px;font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){.contact-postcard{transform:none}}

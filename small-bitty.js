@@ -6,8 +6,8 @@ button.addEventListener('click', () => {
   seated.hidden = showLifted;
   button.textContent = showLifted ? 'Put the label back' : 'Lift a magnetic label';
   document.querySelector('#label-note').textContent = showLifted
-    ? 'Look to the left of the slots for the lifted cream label and its exposed round mount.'
-    : 'This lower-angle view shows the labels seated beside their slots.';
+    ? 'The label lifts off its magnetic mount. You can put it back or swap it for a different icon.'
+    : 'The magnetic labels sit beside the slots. Try lifting one to see how it separates.';
   button.setAttribute('aria-pressed', String(showLifted));
 });
 
